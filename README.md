@@ -28,57 +28,43 @@
 ### Making a Request
 
 ```ruby
-$ > require "ip_to_earth"
+require "ip_to_earth"
 
-# Note: the 'Controller' here is not a reference to Rails controllers
-# but an internal structure, won't interfere with your Rails app and will 
-# work fine in a standalone ruby app or another framework
-
-$ > ite = IpToEarth::APIController.new
-
-$ > result = ite.lookup('68.10.149.45') # Pass in any valid IPv4 or IPv6 value
+IpToEarth.lookup('68.10.149.45') # Pass in any valid IPv4 or IPv6 value
 ```
 
 ### Using Results
 
 ```ruby
-$ > result.valid
- => true 
- 
-$ > result.country
- => "United States" 
- 
-$ > result.country_code
- => "US" 
- 
-$ > result.hostname
- => "" 
- 
-$ > result.city
- => "Virginia Beach" 
- 
-$ > result.ip
- => "68.10.149.45" 
- 
-$ > result.latitude
- => 36.852928161621094 
- 
-$ > result.longitude
- => -75.97798156738281 
- 
-$ > result.region
- => "Virginia" 
+result = IpToEarth.lookup("8.8.8.8")
+# => #<struct IpToEarth::APIResult
+#  valid=true,
+#  country="United States",
+#  country_code="US",
+#  hostname="",
+#  city="Mountain View",
+#  ip="8.8.8.8",
+#  latitude=37.40599060058594,
+#  longitude=-122.0785140991211,
+#  region="California",
+#  continent_code="NA",
+#  country_code3="USA",
+#  currency_code="USD">
+
+result.valid # => true 
+result.country # => "United States" 
+result.country_code # => "US" 
+result.city # => "Virginia Beach" 
+result.latitude # => 37.40599060058594 
+# ...
 ```
-
-
-
 
 
 ## Installation
 
 ```ruby
 # In your Gemfile
-gem 'iptoearth', git: 'https://github.com/mbuckbee/Ip-To-Earth-Gem.git'
+gem 'ip_to_earth', git: 'https://github.com/LynxEyes/ip_to_earth.git'
 ```    
 
 
@@ -95,7 +81,6 @@ gem 'iptoearth', git: 'https://github.com/mbuckbee/Ip-To-Earth-Gem.git'
 |`latitude`|float|Geographic latitude of the identified IP address|
 |`longitude`|float|Geographic longitude of the identified IP address|
 |`region`|string|State or Region where the IP address is located|
-
 
 
 ## Live Interactive Testing

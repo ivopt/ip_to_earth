@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.description = 'Find the Country and City of origin for an IP Address'
   s.authors = ['Ivo Jesus']
   s.email = 'ivo.jesus@gmail.com'
-  s.homepage = 'https://apimatic.io'
+  s.homepage = 'https://github.com/LynxEyes/ip_to_earth'
   s.license = 'MIT'
   s.add_dependency('http', '~> 4.1.1')
   s.add_dependency('addressable', '~> 2.6.0')
