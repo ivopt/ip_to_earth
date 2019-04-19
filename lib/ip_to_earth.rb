@@ -1,5 +1,3 @@
-require 'openssl'
-require 'json'
 require 'http'
 require 'addressable'
 
